@@ -1,0 +1,23 @@
+@startuml
+
+class Entreprise
+class Artisan {
+    Int salaireH
+    String coordonnées
+    Int payeMission(Chantier pfChantier)
+}
+class Spécialité {
+    String specialité
+}
+class Chantier {
+    Date dateDebut
+    Date dateFin
+    String adresse
+}
+
+Entreprise "1" --> "0..*" Artisan
+Entreprise --> Chantier
+
+Artisan "0..*" --> "0..*" Chantier
+Artisan "0..*" --> "1" Spécialité
+@enduml

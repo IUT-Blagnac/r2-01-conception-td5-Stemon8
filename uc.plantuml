@@ -1,0 +1,22 @@
+@startuml
+usecase d as "Emploie"
+(se spécialise) as sp
+(calculer la paie) as cp
+
+actor Entreprise 
+:artisan: as a
+
+Package Chantier {
+    (Gère) as G
+    (Est affecté à) as T
+}
+'Pour aligner les 2 acteurs :
+
+Entreprise -> d
+Entreprise --> G
+Entreprise ---> cp
+a -> T
+a -> sp
+d -> a
+@enduml
+```
